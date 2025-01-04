@@ -174,6 +174,104 @@
         .service-item:hover {
             transform: scale(1.05);
         }
+        /* Contact Section */
+#contact {
+    padding: 60px 0;
+    background-color: #3498db;  /* Blue background */
+    color: #fff;  /* White text */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.section-header p {
+    font-size: 18px;
+    color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px; /* Curved edges */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.contact-form:hover {
+    transform: scale(1.02);  /* Slight scaling animation on hover */
+}
+
+.contact-form .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contact-form .col-lg-6,
+.contact-form .col-12 {
+    width: 100%;
+}
+
+.contact-form .col-lg-6 {
+    width: 48%;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Curved edges for input fields */
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #2980b9;  /* Blue focus border */
+    outline: none;
+    transform: scale(1.05);  /* Slight scaling animation when focused */
+}
+
+.contact-form button {
+    padding: 14px 30px;
+    background-color: #2980b9;  /* Blue button */
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;  /* Curved button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #3498db;  /* Darker blue on hover */
+    transform: scale(1.1);  /* Slight scaling animation on hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-form .col-lg-6 {
+        width: 100%;
+    }
+}
+
     </style>
 </head>
 
@@ -247,50 +345,68 @@
     </section>
 
     <!-- Service Section -->
-    <section id="service" data-aos="fade-up">
-        <div class="section-header">
-            <h2>What I Do</h2>
-            <p>My Services</p>
-        </div>
-        <div class="container">
-            <div class="row">
-                <!-- Web Development -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="service-item">
-                        <i class="fas fa-code fa-3x"></i>
-                        <h3>Web Development</h3>
-                        <p>Custom websites using modern technologies for a responsive and user-friendly experience.</p>
-                    </div>
+   <!-- Services Section -->
+<section id="services" data-aos="fade-up">
+    <div class="section-header">
+        <h2>Services</h2>
+        <p>What I Can Do for You</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- Service 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Build fast and responsive websites with modern technologies.</p>
                 </div>
-                <!-- Mobile App Development -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="service-item">
-                        <i class="fas fa-mobile-alt fa-3x"></i>
-                        <h3>Mobile App Development</h3>
-                        <p>Building mobile apps for Android and iOS using cross-platform frameworks like Flutter.</p>
-                    </div>
+            </div>
+            <!-- Service 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile App Development</h3>
+                    <p>Create intuitive mobile applications for both Android and iOS.</p>
                 </div>
-                <!-- Game Development -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="service-item">
-                        <i class="fas fa-gamepad fa-3x"></i>
-                        <h3>Game Development</h3>
-                        <p>Development of interactive and engaging games, tailored for both mobile and PC platforms.</p>
-                    </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Design beautiful, user-friendly interfaces that enhance the user experience.</p>
+                </div>
+            </div>
+            <!-- Service 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Solutions</h3>
+                    <p>Implement cloud technologies to scale your applications and ensure high availability.</p>
+                </div>
+            </div>
+            <!-- Service 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-lock"></i>
+                    <h3>Cybersecurity</h3>
+                    <p>Protect your digital assets and data with robust security solutions.</p>
+                </div>
+            </div>
+            <!-- Service 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-analytics"></i>
+                    <h3>Data Analytics</h3>
+                    <p>Extract insights from your data to drive informed business decisions.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Experience Section -->
-    <section id="experience" data-aos="fade-left">
-        <div class="section-header">
-            <h2>Experience</h2>
-            <p>Worked on diverse projects in web, mobile, and game development.</p>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
     <section id="projects" data-aos="fade-up">
         <div class="section-header">
             <h2>Projects</h2>
@@ -325,38 +441,58 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+ 
+
     <!-- Contact Section -->
-    <section id="contact" data-aos="fade-up">
-        <div class="section-header">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out via email or social media platforms.</p>
-            <a href="mailto:10kanishk17@gmail.com" class="btn">Email Me</a>
-        </div>
-    </section>
+   <!-- Contact Form Section -->
+<section id="contact" data-aos="fade-up">
+    <div class="section-header">
+        <h2>Contact</h2>
+        <p>Get In Touch</p>
+    </div>
+    <div class="container">
+        <form action="https://formspree.io/f/xrbbokrj" method="POST" class="contact-form">
+            <div class="row">
+                <div class="col-lg-6">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-lg-6">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="col-lg-6">
+                    <input type="email" name="_replyto" placeholder="_replyto" required>
+                </div>
+                <div class="col-12">
+                    <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit">Send Message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Kanishk K.R. All Rights Reserved.</p>
+        <p>&copy; 2025 Kanishk K.R. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-    <!-- Initialize AOS -->
     <script>
         AOS.init();
-    </script>
 
-    <!-- Initialize Typed.js -->
-    <script>
-        var typed = new Typed('#typed', {
-            strings: ["Kanishk K.R", "a Developer", "a Creator"],
-            typeSpeed: 50,
-            backSpeed: 25,
+        var options = {
+            strings: ["Kanishk K.R", "Software Developer", "Tech Enthusiast"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 1000,
+            startDelay: 500,
             loop: true
-        });
+        };
+        var typed = new Typed("#typed", options);
     </script>
-   
 </body>
 </html>
