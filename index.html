@@ -22,7 +22,7 @@
             margin: 0;
             padding: 0;
             color: #fff;
-            background: #121212;
+            background: linear-gradient(to bottom,#1a1818,#e7e8ec );
             scroll-behavior: smooth;
         }
 
@@ -31,10 +31,11 @@
             position: fixed;
             width: 100%;
             z-index: 10;
-            background: rgba(0, 0, 0, 0.8);
+            background: transparent;
             padding: 10px 0;
             display: flex;
             justify-content: center;
+           
         }
 
         .navbar a {
@@ -58,7 +59,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(to right, #000428, #004e92);
+            background: linear-gradient(to bottom, #e7e8ec, #e4969a);
         }
 
         .hero h1 {
@@ -99,6 +100,7 @@
 
         .section-header {
             margin-bottom: 40px;
+            border-radius: 10%;
         }
 
         .section-header h2 {
@@ -178,7 +180,12 @@
         /* Contact Section */
 #contact {
     padding: 60px 0;
-    background-color: #3498db;  /* Blue background */
+    background-color: linear-gradient(to bottom, #e7e8ec, #e4969a);  /* Blue background */
+    color: #fff;  /* White text */
+}
+#reviews {
+    padding: 60px 0;
+    background-color: #466c85;  /* Blue background */
     color: #fff;  /* White text */
 }
 
@@ -211,7 +218,9 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
-
+.reviews-form{
+    border-radius: 10px;
+}
 .contact-form:hover {
     transform: scale(1.02);  /* Slight scaling animation on hover */
 }
@@ -260,12 +269,37 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
+.reviews-form button {
+    padding: 14px 30px;
+    background-color: #2980b9;  /* Blue button */
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;  /* Curved button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 .contact-form button:hover {
     background-color: #3498db;  /* Darker blue on hover */
     transform: scale(1.1);  /* Slight scaling animation on hover */
 }
+#mytextbox{
+    width: 500px;
+    height: 100px;
+    border-radius: 10px;
+    border-color: transparent;
+   
+}
+#mybutton{
+    margin-top: 50px;
+    border-radius: 30px;
+    width: 100px;
+    height: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    border-color: transparent;
 
+}
 /* Responsive */
 @media (max-width: 768px) {
     .contact-form .col-lg-6 {
@@ -286,6 +320,7 @@
         <a href="#projects">Projects</a>
         <a href="#certificates">Certificates</a>
         <a href="#contact">Contact</a>
+        <a href="#reviews">Reviews</a>
     </div>
 
     <!-- Hero Section -->
@@ -294,7 +329,7 @@
             <h1 data-aos="fade-up">Hi, I'm <span id="typed"></span></h1>
             <h2 data-aos="fade-up" data-aos-delay="300">Software Engineer & Developer</h2>
             <p data-aos="fade-up" data-aos-delay="400">I am passionate about creating innovative and scalable solutions using modern technologies.</p>
-            <a href="#contact" class="btn" data-aos="zoom-in" data-aos-delay="500">Contact Me</a>
+            <a href="#contact" class="btn" data-aos="zoom-in" data-aos-delay="500" id="bttn">Contact Me</a>
         </div>
     </div>
 
@@ -509,6 +544,17 @@
         </form>
     </div>
 </section>
+<section id="reviews">
+    <div class="section-header">
+    <h2>Reviews</h2>
+    <form action="https://formspree.io/f/meoebvap" method="POST">
+        <input id="mytextbox" type="text" name="review" place="How do you feel about me?" >
+        <br>
+        <button id="mybutton" type="submit"> Send Message</button>
+
+    </form>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -521,8 +567,8 @@
         AOS.init();
 
         var options = {
-            strings: ["Kanishk K.R", "Software Developer", "Tech Enthusiast"],
-            typeSpeed: 100,
+            strings:["Kanishk K.R", "Software Developer"],
+            typeSpeed: 200,
             backSpeed: 50,
             backDelay: 1000,
             startDelay: 500,
