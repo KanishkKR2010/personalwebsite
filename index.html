@@ -4,10 +4,13 @@
 <meta name="google-site-verification" content="ssCJfYLyDpkJcZ2KOlOLdxUN20bbOPKOptFYsSjbbrA">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanishk K.R|Software Developer</title>
+    <title>Kanishk K.R</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
+<!-- Add this inside the <head> tag of your HTML file -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,12 +21,13 @@
 
     <style>
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             color: #fff;
             background: linear-gradient(to bottom,#1a1818,#e7e8ec );
             scroll-behavior: smooth;
+          
         }
 
         /* Navbar */
@@ -53,44 +57,83 @@
         }
 
         /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(to bottom, #e7e8ec, #e4969a);
-        }
+        /* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1a1a40, #1c2b64);
+  color: white;
+  overflow-x: hidden;
+}
 
-        .hero h2 {
-            font-size: 1.5rem;
-            color: #00dfc4;
-            margin-bottom: 20px;
-        }
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: transparent;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
 
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: #fff;
-        }
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
 
-        .btn {
-            padding: 10px 20px;
-            background: #00dfc4;
-            color: #121212;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: transform 0.3s ease-in-out;
-        }
+.hero h2 {
+  font-size: 2rem;
+  color: #00ffe7;
+  margin-bottom: 20px;
+}
 
-        .btn:hover {
-            transform: scale(1.1);
-        }
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #ccc;
+}
+
+#typed {
+  color: #ffcc00;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #ffcc00;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 25px;
+  margin: 10px 5px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ffaa00;
+  transform: translateY(-2px);
+}
+
+/* Optional Particle Background Container */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
 
         /* Sections */
         section {
@@ -145,6 +188,13 @@
 
         /* Project Cards */
         .project-card {
+            background: #222;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .service-card {
             background: #222;
             padding: 20px;
             margin: 10px;
@@ -261,7 +311,7 @@
 
 .contact-form button {
     padding: 14px 30px;
-    background-color: #2980b9;  /* Blue button */
+    background-color: #7893a5;  /* Blue button */
     color: #fff;
     font-size: 18px;
     border: none;
@@ -269,236 +319,675 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-.reviews-form button {
-    padding: 14px 30px;
-    background-color: #2980b9;  /* Blue button */
-    color: #fff;
-    font-size: 18px;
-    border: none;
-    border-radius: 25px;  /* Curved button */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.reviews-section {
+  background: linear-gradient(135deg, #001f3f, #003366);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
 }
-.contact-form button:hover {
-    background-color: #3498db;  /* Darker blue on hover */
-    transform: scale(1.1);  /* Slight scaling animation on hover */
-}
-#mytextbox{
-    width: 500px;
-    height: 100px;
-    border-radius: 10px;
-    border-color: transparent;
-   
-}
-#mybutton{
-    margin-top: 50px;
-    border-radius: 30px;
-    width: 100px;
-    height: 100px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 20px;
-    border-color: transparent;
 
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #00ff99;
 }
+
+.review-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.review-form textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #00ff99;
+  background-color: #002244;
+  color: white;
+  resize: none;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.review-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 255, 153, 0.4);
+}
+
+#mybutton {
+  margin-top: 20px;
+  background-color: #00ff99;
+  color: #002244;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#mybutton:hover {
+  background-color: #00cc88;
+  transform: scale(1.05);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .contact-form .col-lg-6 {
         width: 100%;
     }
 }
+/* About Me Section */
+.about {
+  background-color: #002244; /* Uniform deep blue background */
+  color: white;
+  padding: 100px 20px;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 50px;
+  justify-content: center;
+}
+
+.about-img img {
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.skills span {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #000;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-block;
+  background: #00ffe7;
+  color: #000;
+  font-weight: 600;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00b3a4;
+}
+
+.projects {
+  background-color: #002244; /* Uniform deep blue */
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3rem;
+  color: #00ff99;
+  margin-bottom: 60px;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.project-card {
+  background-color: #003366;
+  border: 2px solid #00ff99;
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 255, 153, 0.2);
+}
+
+.project-card h3 {
+  color: #00ff99;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #00ff99;
+  color: #002244;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #00cc7a;
+}
+
+
+@media (max-width: 768px) {
+  .projects-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+#about{
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  position: relative; /* Ensure the content sits on top of the particles */
+  z-index: 1; /* Make sure the service tab content is above the particles */
+  padding: 50px;
+  color: white;
+}
+#projects{
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  position: relative; /* Ensure the content sits on top of the particles */
+  z-index: 1; /* Make sure the service tab content is above the particles */
+  padding: 50px;
+  color: white;
+}
+#about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #1a202c;
+    font-weight: 700;
+}
+
+#about .profile {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+#about .profile:hover {
+    transform: scale(1.03);
+}
+
+#about .text {
+    width: 60%;
+    text-align: left;
+}
+
+#about .text h3 {
+    font-size: 2rem;
+    color: #2575fc;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#about .text p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+#about .skills {
+    margin-top: 20px;
+}
+
+#about .skills ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#about .skills ul li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#about .skills ul li strong {
+    font-weight: 500;
+}
+
+.progress {
+    font-weight: 600;
+    color: #2575fc;
+}
+
+#about .image {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about .image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#about .image img:hover {
+    transform: scale(1.1);
+}
+.services {
+  
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  color: #00ff99;
+  margin-bottom: 50px;
+}
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #003366;
+  border: 2px solid #00ff99;
+  border-radius: 15px;
+  padding: 30px 25px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(0, 255, 153, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 255, 153, 0.3);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: #00ff99;
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+}
+
+.github-tab {
+  font-weight: bold;
+  color: #ffcc00; /* GitHub-specific color */
+}
+
+/* GitHub Section */
+#github {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 50px;
+  text-align: center;
+}
+
+#github h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+#github p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.github-button {
+  background-color: #24292f; /* GitHub dark gray */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.github-button:hover {
+  background-color: #6cc644; /* GitHub Green on hover */
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-icon {
+  font-size: 40px;
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #about .profile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about .text {
+        width: 100%;
+        text-align: center;
+    }
+
+    #about .image {
+        width: 80%;
+        margin-top: 20px;
+    }
+}
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensures particles are in the background */
+}
+h2 {
+            color: #4CAF50;  /* Green color */
+            font-size: 36px;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+            margin-top: 20px;
+        }
 
     </style>
 </head>
 
 <body>
+    <div id="particles-js"></div>
+
     <!-- Navbar -->
     <div class="navbar">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#service">Service</a>
-        <a href="#experience">Experience</a>
+        <a href="#services">Service</a>
+       
         <a href="#projects">Projects</a>
-        <a href="#certificates">Certificates</a>
+        <a href="#github">Github</a>
         <a href="#contact">Contact</a>
         <a href="#reviews">Reviews</a>
+        <a href="Resume-Kanishk.pdf" target="_blank" class="resume-btn" style="color:#000;background-color: #00ff99;">Resume</a>
     </div>
-
+    <div class="pattern-container">
+        
+      </div>
+      
     <!-- Hero Section -->
-    <div class="hero" id="home">
-        <div>
-            <h1 data-aos="fade-up">Hi, I'm <span id="typed"></span></h1>
-            <h2 data-aos="fade-up" data-aos-delay="300">Software Engineer & Developer</h2>
-            <p data-aos="fade-up" data-aos-delay="400">I am passionate about creating innovative and scalable solutions using modern technologies.</p>
-            <a href="#contact" class="btn" data-aos="zoom-in" data-aos-delay="500" id="bttn">Contact Me</a>
-        </div>
-    </div>
+    <!-- Include Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<!-- Hero Section -->
+<div class="hero" id="home">
+  <div>
+    <h1 data-aos="fade-up">Hi, I'm <span id="typed">Kanishk</span></h1>
+    <h2 data-aos="fade-up" data-aos-delay="300">Software Engineer & Developer</h2>
+    <p data-aos="fade-up" data-aos-delay="400">
+      I am passionate about creating innovative and scalable solutions using modern technologies.
+    </p>
+    <a href="#contact" class="btn" data-aos="zoom-in" data-aos-delay="500" id="bttn">Contact Me</a>
+    <a href="https://www.linkedin.com/in/kanishkkr" target="_blank" class="btn" data-aos="zoom-in" data-aos-delay="600">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/KanishkKR2010" target="_blank" class="btn" data-aos="zoom-in" data-aos-delay="700">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://www.threads.net" target="_blank" class="btn" data-aos="zoom-in" data-aos-delay="700">
+        <i class="fab fa-threads"></i> Thread
+      </a>
+      <a href="https://www.instagram.com" target="_blank" class="btn" data-aos="zoom-in" data-aos-delay="700">
+        <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="mailto:10kanishk17@gmail.com?subject=Inquiry&body=Hello, I would like to get in touch." target="_blank" class="btn" data-aos="zoom-in" data-aos-delay="700">
+            <i class="fab fa-envelope"></i> Mail
+            </a>
+  </div>
+</div>
+
 
     <!-- About Me Section -->
-    <section id="about" data-aos="fade-up">
-        <div class="section-header">
-            <h2>About Me</h2>
-            <p>MSSE - Master in System and Software Engineering</p>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h3>Software and Hardware Engineer</h3>
-                    <p>Studying in Grade 9 - SRM Public School. I have a deep interest in both software and hardware systems and love solving complex problems using technology.</p>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="skills">
-                        <!-- Skill: C, C++, Java -->
-                        <div class="skill-item">
-                            <p>C, C++, Java <span>83%</span></p>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 83%; background: #00dfc4;"></div>
-                            </div>
-                        </div>
-                        <!-- Skill: MySQL -->
-                        <div class="skill-item">
-                            <p>MySQL <span>85%</span></p>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 85%; background: #00dfc4;"></div>
-                            </div>
-                        </div>
-                        <!-- Skill: Hardware & Networking -->
-                        <div class="skill-item">
-                            <p>Hardware & Networking <span>70%</span></p>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 70%; background: #00dfc4;"></div>
-                            </div>
-                        </div>
-                        <!-- Skill: .NET, Python -->
-                        <div class="skill-item">
-                            <p>.NET, Python <span>90%</span></p>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 90%; background: #00dfc4;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section id="about" class="about">
+        <div class="about-container">
+          <div class="about-img" data-aos="fade-right">
+           
+          </div>
+          <div class="about-text" data-aos="fade-left">
+            <h2 style="color: #4CAF50;">About Me</h2>
+            <p>
+              I'm a passionate <strong>Software Developer</strong> who loves building scalable web and mobile applications.
+              My mission is to create user-friendly and performance-optimized digital products that solve real-world problems.
+            </p>
+            <div class="skills">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Python</span>
+              <span>Flask</span>
+              <span>.NET</span>
             </div>
+            <a href="#projects" class="btn">View My Projects</a>
+          </div>
         </div>
-    </section>
+      </section>
+      <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
 
     <!-- Service Section -->
    <!-- Services Section -->
-<section id="services" data-aos="fade-up">
-    <div class="section-header">
-        <h2>Services</h2>
-        <p>What I Can Do for You</p>
-    </div>
+   <section id="services" class="services">
     <div class="container">
-        <div class="row">
-            <!-- Service 1 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-code"></i>
-                    <h3>Web Development</h3>
-                    <p>Build fast and responsive websites with modern technologies.</p>
-                </div>
-            </div>
-            <!-- Service 2 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile App Development</h3>
-                    <p>Create intuitive mobile applications for both Android and iOS.</p>
-                </div>
-            </div>
-            <!-- Service 3 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>UI/UX Design</h3>
-                    <p>Design beautiful, user-friendly interfaces that enhance the user experience.</p>
-                </div>
-            </div>
-            <!-- Service 4 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-cloud"></i>
-                    <h3>Cloud Solutions</h3>
-                    <p>Implement cloud technologies to scale your applications and ensure high availability.</p>
-                </div>
-            </div>
-            <!-- Service 5 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-                    <i class="fas fa-lock"></i>
-                    <h3>Cybersecurity</h3>
-                    <p>Protect your digital assets and data with robust security solutions.</p>
-                </div>
-            </div>
-            <!-- Service 6 -->
-            <div class="col-lg-4 col-md-6">
-                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-                    <i class="fas fa-analytics"></i>
-                    <h3>Data Analytics</h3>
-                    <p>Extract insights from your data to drive informed business decisions.</p>
-                </div>
-            </div>
+      <h2 class="section-title">What I Can Do for You</h2>
+      <div class="services-grid">
+  
+        <div class="service-card" data-aos="zoom-in">
+          <h3>Web Development</h3>
+          <p>Build fast and responsive websites with modern technologies.</p>
         </div>
+  
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+          <h3>Mobile App Development</h3>
+          <p>Create intuitive mobile applications for both Android and iOS.</p>
+        </div>
+  
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+          <h3>UI/UX Design</h3>
+          <p>Design beautiful, user-friendly interfaces that enhance the user experience.</p>
+        </div>
+  
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+          <h3>Cloud Solutions</h3>
+          <p>Implement cloud technologies to scale your applications and ensure high availability.</p>
+        </div>
+  
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+          <h3>Cybersecurity</h3>
+          <p>Protect your digital assets and data with robust security solutions.</p>
+        </div>
+  
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="500">
+          <h3>Data Analytics</h3>
+          <p>Extract insights from your data to drive informed business decisions.</p>
+        </div>
+  
+      </div>
     </div>
-</section>
+  </section>
+  
 
 
     <!-- Experience Section -->
-    <section id="projects" data-aos="fade-up">
-        <div class="section-header">
-            <h2>Projects</h2>
-        </div>
+    <section id="projects" class="projects">
         <div class="container">
-            <div class="row">
-                <!-- Project: Olympics Website -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="project-card">
-                        <h3>Olympics Website</h3>
-                        <p>A dynamic website providing real-time updates on the 2024 Olympics, including event highlights and athlete profiles.</p>
-                        <a href="https://dcolympics.vercel.app" target="_blank" class="btn">View Project</a>
-                    </div>
-                </div>
-                <!-- Project: Chat Application -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="project-card">
-                        <h3>Chat Application</h3>
-                        <p>A real-time chat app that allows users to communicate seamlessly using .NET Framework.</p>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div>
-                <!-- Project: Personal AI ChatBot -->
-                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="project-card">
-                        <h3>Personal AI ChatBot</h3>
-                        <p>A real-time chatbot using Flask in Python.</p>
-                        <a href="https://finai.framer.website" class="btn">View Project</a>
-                    </div>
-                </div>
+          <h2 class="section-title">My Projects</h2>
+          <div class="project-grid">
+      
+            <div class="project-card" data-aos="fade-up">
+              <h3>Olympics Website</h3>
+              <p>A dynamic site with real-time updates on the 2024 Olympics, event highlights, and athlete profiles.</p>
+              <a href="https://dcolympics.vercel.app" class="btn">View Project</a>
             </div>
+      
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+              <h3>Chat Application</h3>
+              <p>A real-time chat app built using .NET Framework for seamless communication between users.</p>
+              <a href="#" class="btn">View Project</a>
+            </div>
+      
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+              <h3>Personal AI ChatBot</h3>
+              <p>An intelligent chatbot developed with Python Flask for real-time Q&A and interactions.</p>
+              <a href="https://finai.framer.website" class="btn">View Project</a>
+            </div>
+      
+          </div>
         </div>
-    </section>
+      </section>
+      
+      
+    <!---->
     <section id="certificates" data-aos="fade-up">
         <div class="section-header">
-            <h2>Certificates</h2>
-            <p>My Achievements</p>
+            
         </div>
         <div class="container">
             <div class="row">
-                <!-- Certificate 1 -->
+                <!-- Certificate 1
                 <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
                     <div class="certificate-item">
                         <iframe src="java_basic certificate.pdf" width="100%" height="400px" frameborder="0"></iframe>
                         <h3>Certificate of completion</h3>
                         <p>Awarded for completing Java Successfully.</p>
-                    </div>
+                    </div> -->
                 </div>
-                <!-- Certificate 2 -->
+                <!-- Certificate 2 
                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                     <div class="certificate-item">
                         <iframe src="App Developer Certificate.jpeg" width="100%" height="400px" frameborder="0"></iframe>
                         <h3>App Developer</h3>
                         <p>Recognized for completing an advanced APP Development course.</p>
-                    </div>
+                    </div>-->
                 </div>
                 <!-- Certificate 3 
               <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
@@ -511,7 +1000,13 @@
             </div>
         </div>
     </section>
-
+    <section id="github">
+        <h2>My GitHub</h2>
+        <p>Check out my projects and repositories on GitHub!</p>
+        <a href="https://github.com/KanishkKR2010/personalwebsite" target="_blank">
+          <button class="github-button">Visit My GitHub</button>
+        </a>
+      </section>
     <!-- Projects Section -->
  
 
@@ -544,17 +1039,17 @@
         </form>
     </div>
 </section>
-<section id="reviews">
+<section id="reviews" class="reviews-section">
     <div class="section-header">
-    <h2>Reviews</h2>
-    <form action="https://formspree.io/f/meoebvap" method="POST">
-        <input id="mytextbox" type="text" name="review" place="How do you feel about me?" >
+      <h2>Reviews</h2>
+      <form action="https://formspree.io/f/meoebvap" method="POST" class="review-form">
+        <textarea id="mytextbox" name="review" placeholder="How do you feel about me?" required></textarea>
         <br>
-        <button id="mybutton" type="submit"> Send Message</button>
-
-    </form>
+        <button id="mybutton" type="submit">Send Review</button>
+      </form>
     </div>
-</section>
+  </section>
+  
 
     <!-- Footer -->
     <footer>
@@ -576,5 +1071,151 @@
         };
         var typed = new Typed("#typed", options);
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+    <div id="animationContainer"></div>
+    
+    <script>
+      lottie.loadAnimation({
+        container: document.getElementById('animationContainer'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'your-animation.json' // Provide your Lottie JSON file path
+      });
+    </script>
+    <script>
+        particlesJS('particles-js', {
+          particles: {
+            number: {
+              value: 80,
+              density: {
+                enable: true,
+                value_area: 800
+              }
+            },
+            color: {
+              value: '#ffffff'
+            },
+            shape: {
+              type: 'circle',
+              stroke: {
+                width: 0,
+                color: '#000000'
+              },
+              polygon: {
+                nb_sides: 5
+              },
+              image: {
+                src: 'img/github.svg',
+                width: 100,
+                height: 100
+              }
+            },
+            opacity: {
+              value: 0.5,
+              random: true,
+              anim: {
+                enable: true,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false
+              }
+            },
+            size: {
+              value: 3,
+              random: true,
+              anim: {
+                enable: false,
+                speed: 40,
+                size_min: 0.1,
+                sync: false
+              }
+            },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: '#ffffff',
+              opacity: 0.4,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 6,
+              direction: 'none',
+              random: true,
+              straight: false,
+              out_mode: 'out',
+              bounce: false,
+              attract: {
+                enable: false,
+                rotateX: 600,
+                rotateY: 1200
+              }
+            }
+          },
+          interactivity: {
+            detect_on: 'canvas',
+            events: {
+              onhover: {
+                enable: true,
+                mode: 'repulse'
+              },
+              onclick: {
+                enable: true,
+                mode: 'push'
+              },
+              resize: true
+            },
+            modes: {
+              grab: {
+                distance: 400,
+                line_linked: {
+                  opacity: 1
+                }
+              },
+              bubble: {
+                distance: 400,
+                size: 40,
+                duration: 2,
+                opacity: 8,
+                speed: 3
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.4
+              },
+              push: {
+                particles_nb: 4
+              },
+              remove: {
+                particles_nb: 2
+              }
+            }
+          },
+          retina_detect: true
+        });
+      </script>
+      <div id="particles-js"></div>
+      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+      <script>
+        particlesJS('particles-js', {
+          "particles": {
+            "number": { "value": 80 },
+            "color": { "value": "#ffffff" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5 },
+            "size": { "value": 3 },
+            "line_linked": {
+              "enable": true,
+              "distance": 150,
+              "color": "#ffffff",
+              "opacity": 0.4,
+              "width": 1
+            },
+            "move": { "enable": true, "speed": 2 }
+          }
+        });
+      </script>
+      
 </body>
 </html>
