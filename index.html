@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MHD810NV2S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MHD810NV2S');
-</script>
+<meta name="google-site-verification" content="ssCJfYLyDpkJcZ2KOlOLdxUN20bbOPKOptFYsSjbbrA">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanishk K.R</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -816,13 +811,29 @@ h2 {
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow effect */
             margin-top: 20px;
         }
-
+        #visit-info {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffd700; /* Gold coin color */
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    z-index: 9999;
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  }
     </style>
 </head>
 
 <body>
     <div id="particles-js"></div>
-
+    <div id="visit-info">
+        🪙 Visits: <span id="visitCount">0</span> |
+        ⏱ This Visit: <span id="timeSpent">0</span>s |
+        📊 Total Time: <span id="totalTime">0</span>s
+      </div>
     <!-- Navbar -->
     <div class="navbar">
         <a href="#home">Home</a>
@@ -1220,6 +1231,37 @@ h2 {
             "move": { "enable": true, "speed": 2 }
           }
         });
+      </script>
+      <script>
+        let sessionSeconds = 0;
+        const timeDisplay = document.getElementById("timeSpent");
+      
+        const formEndpoint = "https://formspree.io/f/mvgakkba"; // Replace with your real Formspree endpoint
+      
+        setInterval(() => {
+          sessionSeconds++;
+          timeDisplay.textContent = sessionSeconds;
+      
+          if (sessionSeconds === 51) {
+            // Send message to you via Formspree
+            fetch(formEndpoint, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+              },
+              body: JSON.stringify({
+                message: "A user stayed on your site for more than 50 seconds.",
+                from: "autonotify@yourdomain.com"
+              })
+            })
+            .then(response => {
+              if (response.ok) {
+                console.log("Notification sent to site owner.");
+              }
+            });
+          }
+        }, 1000);
       </script>
       
 </body>
