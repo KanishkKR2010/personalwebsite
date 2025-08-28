@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Portal - Auth</title>
+  <script src="/config.js"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#0f172a; color:#e2e8f0; margin:0; }
+    .container { max-width: 960px; margin: 40px auto; padding: 24px; }
+    .card { background:#111827; border:1px solid #1f2937; border-radius:12px; padding:24px; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap:24px; }
+    input, select { width:100%; padding:12px; border-radius:8px; border:1px solid #334155; background:#0b1220; color:#e2e8f0; }
+    label { display:block; margin:10px 0 6px; font-size:14px; color:#93c5fd; }
+    button { background:#22d3ee; color:#0c1222; border:none; padding:12px 16px; border-radius:8px; cursor:pointer; font-weight:600; }
+    button:disabled { opacity:0.6; cursor:not-allowed; }
+    h1 { margin:0 0 16px; }
+    .error { color:#fca5a5; margin-top:8px; }
+    .success { color:#86efac; margin-top:8px; }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+  <script>
+    function apiUrl(path) {
+      return (window.API_URL || "").replace(/\/$/, "") + path;
+    }
+
+    async function registerUser(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        password: form.password.value,
+        role: form.role.value
+      };
+      const btn = form.querySelector("button");
+      const out = form.querySelector(".out");
+      btn.disabled = true; out.textContent = "";
+      try {
+        const res = await fetch(apiUrl("/api/auth/register"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(data)
+        });
+        const body = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(body.error || (res.status+" Network Error"));
+        localStorage.setItem("token", body.token);
+        localStorage.setItem("user", JSON.stringify(body.user));
+        out.textContent = "Registered successfully. Redirecting...";
+        out.className = "out success";
+        setTimeout(() => { window.location.href = "/dashboard.html"; }, 700);
+      } catch (err) {
+        out.textContent = err.message || "Network error";
+        out.className = "out error";
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    async function loginUser(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        email: form.email.value.trim(),
+        password: form.password.value
+      };
+      const btn = form.querySelector("button");
+      const out = form.querySelector(".out");
+      btn.disabled = true; out.textContent = "";
+      try {
+        const res = await fetch(apiUrl("/api/auth/login"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(data)
+        });
+        const body = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(body.error || (res.status+" Network Error"));
+        localStorage.setItem("token", body.token);
+        localStorage.setItem("user", JSON.stringify(body.user));
+        out.textContent = "Login successful. Redirecting...";
+        out.className = "out success";
+        setTimeout(() => { window.location.href = "/dashboard.html"; }, 700);
+      } catch (err) {
+        out.textContent = err.message || "Network error";
+        out.className = "out error";
+      } finally {
+        btn.disabled = false;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Student Portal</h1>
+    <div class="grid">
+      <div class="card">
+        <h2>Create Account</h2>
+        <form onsubmit="registerUser(event)">
+          <label for="r-name">Full Name</label>
+          <input id="r-name" name="name" required />
+          <label for="r-email">Email</label>
+          <input id="r-email" name="email" type="email" required />
+          <label for="r-password">Password</label>
+          <input id="r-password" name="password" type="password" minlength="6" required />
+          <label for="r-role">Role</label>
+          <select id="r-role" name="role">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+            <option value="admin">Admin</option>
+          </select>
+          <div style="margin-top:12px">
+            <button type="submit">Sign Up</button>
+          </div>
+          <div class="out" aria-live="polite"></div>
+        </form>
+      </div>
+      <div class="card">
+        <h2>Login</h2>
+        <form onsubmit="loginUser(event)">
+          <label for="l-email">Email</label>
+          <input id="l-email" name="email" type="email" required />
+          <label for="l-password">Password</label>
+          <input id="l-password" name="password" type="password" required />
+          <div style="margin-top:12px">
+            <button type="submit">Login</button>
+          </div>
+          <div class="out" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

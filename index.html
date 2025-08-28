@@ -1057,10 +1057,13 @@ h2 {
     <section id="github">
         <h2>My GitHub</h2>
         <p>Check out my projects and repositories on GitHub!</p>
-        <a href="https://github.com/KanishkKR2010/personalwebsite" target="_blank">
+        <a id="github-link" href="https://github.com/KanishkKR2010/personalwebsite" target="_blank">
           <button class="github-button">Visit My GitHub</button>
         </a>
       </section>
+      <script>
+        (function(){ try { if (window.GITHUB_URL) { var a = document.getElementById('github-link'); if (a) a.href = window.GITHUB_URL; } } catch (e) {} })();
+      </script>
     <!-- Projects Section -->
  
 
