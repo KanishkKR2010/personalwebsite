@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Portal - Dashboard</title>
+  <script src="/config.js"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; background:#0f172a; color:#e2e8f0; margin:0; }
+    header { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:#0b1220; border-bottom:1px solid #1f2937; }
+    .role { color:#93c5fd; font-weight:600; }
+    .container { max-width: 1100px; margin: 24px auto; padding: 0 20px; }
+    .cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px; }
+    .card { background:#111827; border:1px solid #1f2937; border-radius:12px; padding:18px; }
+    .muted { color:#94a3b8; }
+    button { background:#fbbf24; color:#0f172a; border:none; padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:600; }
+  </style>
+  <script>
+    function apiUrl(path) { return (window.API_URL || "").replace(/\/$/, "") + path; }
+
+    function getToken() { return localStorage.getItem("token") || ""; }
+    function getUser() { try { return JSON.parse(localStorage.getItem("user") || "null"); } catch { return null; } }
+    function signOut() { localStorage.removeItem("token"); localStorage.removeItem("user"); window.location.href = "/auth.html"; }
+
+    async function load() {
+      const token = getToken();
+      if (!token) { window.location.href = "/auth.html"; return; }
+      const meRes = await fetch(apiUrl("/api/me"), { headers: { Authorization: "Bearer "+token } });
+      if (!meRes.ok) { signOut(); return; }
+      const me = await meRes.json();
+      const user = me.user;
+      document.getElementById("who").textContent = user.name + " (" + user.email + ")";
+      document.getElementById("role").textContent = user.role.toUpperCase();
+
+      const dashRes = await fetch(apiUrl("/api/dashboard"), { headers: { Authorization: "Bearer "+token } });
+      const dash = await dashRes.json();
+      document.getElementById("welcome").textContent = dash.welcome;
+      const cards = document.getElementById("cards");
+      cards.innerHTML = "";
+      (dash.cards || []).forEach(c => {
+        const div = document.createElement("div");
+        div.className = "card";
+        div.innerHTML = `<div class="muted">${c.title}</div><div style="font-size:28px;font-weight:800">${c.value}</div>`;
+        cards.appendChild(div);
+      });
+    }
+    window.addEventListener("DOMContentLoaded", load);
+  </script>
+</head>
+<body>
+  <header>
+    <div>
+      <div id="welcome" style="font-weight:700"></div>
+      <div class="muted">Signed in as <span id="who"></span></div>
+    </div>
+    <div>
+      <span class="role" id="role"></span>
+      <button onclick="signOut()" style="margin-left:12px">Sign out</button>
+    </div>
+  </header>
+  <div class="container">
+    <h2 style="margin: 12px 0">Overview</h2>
+    <div id="cards" class="cards"></div>
+  </div>
+</body>
+</html>
+
