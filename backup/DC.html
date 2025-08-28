@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Olympics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #a8ee97;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease-in-out;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #006400;
+            border-radius: 5px;
+        }
+        .highlights {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 2rem;
+            background-color: #fff;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+            background-color: #e3e3e3;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 40%;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .highlight-item h3 {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('back.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero h1, .countdown {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            animation: bounceIn 1s ease;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            margin-top: 1rem;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        /* Keyframes for Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(.3, .3, .3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(.9, .9, .9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(.97, .97, .97);
+            }
+            100% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Live Updates Ticker */
+        .ticker {
+            background-color: #FFD700;
+            padding: 0.5rem;
+            color: #000;
+            overflow: hidden;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .ticker span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: ticker 20s linear infinite;
+        }
+
+        @keyframes ticker {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Events Highlights */
+        .highlights {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 2rem;
+            background-color: #fff;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+            background-color: #e3e3e3;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            width: 40%;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .highlight-item img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .highlight-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .highlight-item h3 {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Mainpage Section */
+        .mainpage {
+            padding: 2rem;
+            background: url('back.jpg') no-repeat center center/cover;
+            text-align: center;
+            color: #111111;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #003366;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="events.html">Events</a>
+        <a href="#athletes">Athletes</a>
+        <a href="#medals">Medal Tally</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#about">About</a>
+    </div>
+ 
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to the 2024 Olympics</h1>
+        <div class="countdown">
+            <p>Countdown to the Opening Ceremony: <span id="countdown"></span></p>
+        </div>
+    </section>
+
+    <!-- Mainpage Section -->
+    <section class="mainpage">
+        <p>The 2024 Summer Olympics, officially known as the Games of the XXXIII Olympiad, will be held in Paris, France. The event marks the third time Paris has hosted the Summer Olympics, having previously done so in 1900 and 1924. The Paris 2024 Olympics promise to be a grand celebration of sports, culture, and unity, bringing together athletes from around the world to compete in a wide array of disciplines.</p>
+        <p><strong>Key Highlights:</strong></p>
+        <ul>
+            <p><strong>Dates:</strong> The Paris 2024 Olympics are scheduled to take place from July 26 to August 11, 2024.</li>
+            <p><strong>Venues:</strong> The games will utilize both iconic Parisian landmarks, like the Champs-Élysées and the Eiffel Tower, and modern sporting facilities. The Stade de France will host the opening and closing ceremonies, as well as major athletic events.</li>
+            <p><strong>New Sports:</strong> Paris 2024 will introduce new sports to the Olympic program, including surfing, skateboarding, sport climbing, and breaking (breakdancing), reflecting the evolving landscape of global sports.</li>
+            <p><strong>Sustainability:</strong> Paris 2024 is committed to being the most sustainable Olympics to date, with an emphasis on reducing the environmental impact. The organizing committee aims to minimize carbon emissions and promote eco-friendly practices throughout the event.</li>
+            <p><strong>Diversity and Inclusion:</strong> The Paris 2024 Olympics will highlight the importance of diversity and inclusion in sports. The Games will continue the tradition of gender equality, with an equal number of male and female athletes expected to compete.</li>
+        </ul>
+        <p><strong>Symbolism:</strong></p>
+        <ul>
+            <p><strong>Olympic Flame:</strong> The Olympic Flame will journey through France, including a special route along the Seine River, leading up to the grand opening ceremony.</li>
+            <p><strong>Slogan:</strong> The official slogan of Paris 2024 is "Games Wide Open," symbolizing the openness and accessibility of the Games to all, as well as the spirit of inclusivity that defines the Olympic movement.</li>
+        </ul>
+        <p><strong>Cultural Impact:</strong></p>
+        <ul>
+            <p><strong>Art and Culture:</strong> Paris 2024 will integrate art and culture into the Olympics, showcasing French art, music, and cuisine to the world. Various cultural events will take place alongside the sporting competitions, creating a vibrant atmosphere throughout the city.</li>
+        </ul>
+        <p>The Paris 2024 Olympics will not only be a showcase of athletic excellence but also a celebration of humanity's collective spirit, bringing the world together in a time of unprecedented challenges and opportunities. Stay tuned for more updates and information as the Games draw closer!</p>
+    </section>
+    <section class="highlights">
+        <div class="highlight-item">
+            <img src="event1.jpg" alt="10m Air Pistol Event">
+            <h3>10m Air Pistol</h3>
+            <p>Manu Bhaker won the first medal for India in the women's 10 m air pistol event. She won a bronze medal and became the first woman shooter to win an Olympic medal for India.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="event2.jpg" alt="Mixed 10m Air Pistol Team Event">
+            <h3>Mixed 10 m Air Pistol Team</h3>
+            <p>In the mixed 10 m air pistol team event, Manu Bhaker partnered with Sarabjot Singh to win another bronze medal, becoming the first Indian since independence to win two medals in a single Olympics.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="event3.jpg" alt="Men's 50m Rifle Three Positions">
+            <h3>Men's 50 m Rifle Three Positions</h3>
+            <p>Swapnil Kusale won another bronze medal in the men's 50 m rifle three positions event, marking India's seventh shooting medal across the Olympic Games.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="event4.jpg" alt="Men's Javelin Throw">
+            <h3>Men's Javelin Throw</h3>
+            <p>Neeraj Chopra won a silver medal in the men's javelin throw event, becoming the fifth individual multiple medalist for India and the first to win a gold and silver combination.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="event5.jpg" alt="Men's Freestyle 57kg Wrestling Event">
+            <h3>Men's Freestyle 57kg Wrestling</h3>
+            <p>Aman Sehrawat won a bronze medal for India in the men's freestyle 57kg wrestling event, becoming the youngest Indian to win an Olympic medal at just 21 years old.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="data:image/jpeg;base64,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" alt="Men's Freestyle 57kg Wrestling Event">
+            <h3>Men's Hockey</h3>
+            <p>Men's Hockey Team won the bronze medal for India making history. </p>
+        </div>
+     
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Olympics</p>
+    </footer>
+    <script>
+        // Countdown Timer Script
+        const countDownDate = new Date("Jul 26, 2024 00:00:00").getTime();
+        const countdownElement = document.getElementById("countdown");
+
+        const countdownFunction = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                countdownElement.innerHTML = "The Olympics have begun!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
