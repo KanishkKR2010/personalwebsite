@@ -94,7 +94,7 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #3b3bec, #bfc3d3);
+  background: linear-gradient(135deg, #104d11, #040404);
   ;
   color: white;
   overflow-x: hidden;
@@ -180,7 +180,7 @@ body {
 
         .section-header h2 {
             font-size: 2rem;
-            color: #00dfc4;
+            color: #0d0e0e;
         }
 
         .section-header p {
@@ -856,6 +856,17 @@ h2 {
     z-index: 9999;
     box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
   }
+  .profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 80%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: absolute;
+    right:80%;
+  }
     </style>
 </head>
 
@@ -887,10 +898,15 @@ h2 {
 <div class="hero" id="home">
   <div>
     <h1 data-aos="fade-up">Hi, I'm <span id="typed">Kanishk</span></h1>
+    <img src="image.jpeg" alt="Profile Picture" class="profile-pic" data-aos="fade-up" data-aos-delay="500">
     <h2 data-aos="fade-up" data-aos-delay="300">Software Engineer & Developer & Tech Enthusiactist</h2>
     <p data-aos="fade-up" data-aos-delay="400">
       I am passionate about creating innovative and scalable solutions using modern technologies.
     </p>
+    <h4 data-aos="fade-up" data-aos-delay="400">
+      Pursuing Grade 11 at SRM Public School. 
+    </h4>
+    
     <a href="#contact" class="btn" data-aos="zoom-in" data-aos-delay="500" id="bttn">Contact Me</a>
     <a href="https://www.linkedin.com/in/kanishkkr" target="_blank" class="btn" data-aos="zoom-in" data-aos-delay="600">
       <i class="fab fa-linkedin"></i> LinkedIn
@@ -1113,7 +1129,7 @@ h2 {
 
     <!-- Footer -->
     
-        <p>&copy; 2025 Kanishk K.R. All rights reserved.</p>
+        <p>&copy; 2026 Kanishk K.R. All rights reserved.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
